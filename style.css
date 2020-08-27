@@ -4,10 +4,12 @@
 
 html {
     scroll-behavior: smooth;
+    text-transform: capitalize;
 }
 
 :root {
     --main-color: #ea5455;
+    --secong-color: #ea7659;
     --main-tran: all 0.5s;
     --main-padding: 6.25rem;
 }
@@ -24,29 +26,19 @@ h2 {
 
 /* /////// Navigation //////  */
            
-/* .nav-link::after{
-    display: block;
-    width: 20px;
-    background-color: transparent;
-    content: " ";
-    height: 3px;
-    margin: 0 auto;
-    margin-top: 1px;
-}  */
-
 .navbar-nav .nav-link {
+    font-size: 20px;
     padding-left: 1.25rem;
     color: var(--main-color) !important;
     margin-right: 3.125rem;
+    border-bottom: 3px solid transparent !important;
     transition: var(--main-tran);
    
 }
 
 .navbar-nav .nav-link:hover {
-    background-color: var(--main-color) ;
-    border-radius: 5%;
-    color: white !important;
-    /* border-bottom: 1px solid black !important; */
+    color: var(--secong-color) !important;
+    border-bottom: 3px solid var(--secong-color) !important;
 }
 
 
@@ -70,7 +62,6 @@ h2 {
 }
 
 nav {
-    /* background-color: var(--main); */
     z-index: 2;
     position: -webkit-sticky;
     position: sticky !important;
@@ -87,8 +78,6 @@ nav {
 
 /* ////////// header section ////////// */
 .header {
-    /* background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./images/header.jpg'); */
-    /* background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(banner1.jpg); */
     height: 100vh;
     background-size: cover;
     background-repeat: none;
@@ -97,8 +86,7 @@ nav {
 }
 
 .header h1 {
-    font-size: 180px;
-    /* font-weight: bold; */
+    font-size: 140px;
     color: #fff;
     word-spacing: 4px;
     letter-spacing: 1px;
@@ -107,7 +95,182 @@ nav {
     left: 8%;
 }
 
+.header h2 {
+    font-size: 80px;
+    color: #fff;
+    word-spacing: 4px;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 50%;
+    left: 8%;
+}
+
+.header span {
+    text-transform: lowercase !important;
+    color: violet;
+}
+
 /* /////////////////////// @media ///////////////////// */
+/* ----------- iPhone 4 and 4S ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .navbar-nav .nav-link {
+        font-size: 20px;
+        padding-left: 1.25rem;
+        color: var(--main-color) !important;
+        margin-left: -1.125rem !important;
+        border-bottom: none !important;
+        transition: var(--main-tran);
+    }
+    .navbar-nav .nav-link:hover {
+        color: var(--secong-color) !important;
+        border-bottom: none !important;
+    }
+    
+    li.nav-item {
+        padding: 10px !important;
+    }
+
+    .header h1 {
+        font-size: 80px !important;
+        color: #fff !important;
+        position: absolute;
+        top: 28%;   
+        left: 4% !important;
+    }
+    .header h2 {
+        font-size: 60px;
+        color: #fff;
+        word-spacing: 4px;
+        letter-spacing: 1px;
+        position: absolute;
+        top: 55%;
+        left: 8%;
+    }
+
+    .productos h2 {
+        color: rebeccapurple !important;
+        font-size: 20px !important;
+        margin: 0 auto !important;
+        align-items: center;
+        justify-content: center !important;
+        font-size: 1.25rem !important;
+        left: 20% !important;
+    }
+    .nonWrap {
+        white-space: nowrap !important;
+    }
+    .comiensos h2 {
+        position: relative;
+        color: black !important;
+        font-size: 1.25rem !important;
+        left: -30% !important;
+    }
+    .productos h2::after {
+        display: block;
+        width: 100px;
+        background-color: var(--main-color);
+        content: " ";
+        height: 3px;
+        margin: 0 auto;
+        margin-top: 1px;
+    }
+}
+
+/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+/* Portrait */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+
+    .header h1 {
+        font-size: 70px !important;
+        color: #fff !important;
+        position: absolute;
+        top: 28%;   
+        left: 4% !important;
+    }
+   
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+    .comiensos h2 {
+        position: relative;
+        color: var(--main-color) !important;
+        font-size: 1.25rem !important;
+        left: 1% !important;
+    }
+}
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+/* Portrait */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) { 
+    .header h1 {
+        font-size: 4.375rem !important;
+        color: #fff !important;
+        position: absolute;
+        top: 28%;   
+        left: 4% !important;
+    }
+    .header h2 {
+        font-size: 60px;
+        color: #fff;
+        word-spacing: 4px;
+        letter-spacing: 1px;
+        position: absolute;
+        top: 55%;
+        left: 8%;
+    }
+
+    .productos h2 {
+        color: rebeccapurple !important;
+        font-size: 1.25rem !important;
+        margin: 0 auto !important;
+        align-items: center;
+        justify-content: center !important;
+        font-size: 1.25rem !important;
+    }
+    .nonWrap {
+        white-space: nowrap !important;
+    }
+    .comiensos h2 {
+        position: relative;
+        color: black !important;
+        font-size: 1.25rem !important;
+        left: -3.5% !important;
+    }
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) { 
+
+      .header h1 {
+        font-size: 4.375rem !important;
+        color: #fff !important;
+        position: absolute;
+        top: 28%;   
+        left: 4% !important;
+    }
+}
+
 @media (max-width: 750px) {
     /* /////// Navigation //////  */
     h1, h2 {
@@ -127,7 +290,6 @@ nav {
         background-color: var(--main-color);
         content: " ";
         height: 3px;
-        /* margin: 0 auto; */
         margin-top: 20px !important;
     }
     .logo > img {
@@ -142,8 +304,8 @@ nav {
     }
 
     .navbar-toggler:focus,
-.navbar-toggler:active,
-.navbar-toggler-icon:focus {
+    .navbar-toggler:active,
+    .navbar-toggler-icon:focus {
     outline: tomato;
     box-shadow: tomato;
     border-color: #d92027;
@@ -151,11 +313,8 @@ nav {
 
 /* ///////// header ////////// */
 .header h1 {
-    font-size: 100px;
-    /* font-weight: bold; */
+    font-size: 6.25rem;
     color: #fff;
-    /* word-spacing: 4px;
-    letter-spacing: 1px; */
     position: absolute;
     top: 28%;
     left: 8%;
@@ -172,9 +331,7 @@ nav {
     grid-gap: 2px;
 }
 
-.icon {
-   font-size: 200%; 
-}
+
 /* /////// seccion comiensos //////// */
 p {
     letter-spacing: 0.0625rem !important;
@@ -183,17 +340,44 @@ p {
 }
 }
 
+/* ----------- iPhone X ----------- */
+/* Portrait */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+    .header h2 {
+        top: 48%;
+    }
 
-/* /////////// section productos //////////  */
-.jumbotron p {
-    color: var(--main-color);
-    /* padding: 100px; */
-    text-align: center;
-    /* letter-spacing: 1px; */
-    /* line-height: 40px; */
 }
 
-.jumbotron {
+/* Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+    .header h1 {
+        font-size: 3.875rem !important;
+        color: #fff !important;
+        position: absolute;
+        top: 28%;   
+        left: 7% !important;
+    }
+}
+
+
+/* /////////// section productos //////////  */
+.long-text p {
+    color: var(--secong-color);
+    text-align: center;
+    background-color: #f8f8f5;
+    
+}
+
+.long-text {
     margin-bottom: 10rem;
 }
  
@@ -211,7 +395,6 @@ p {
     color: var(--main-color);
     margin: 0 auto;
     right: 20% !important;
-    /* display: inline-block; */
 }
 
 .productos h2::after {
