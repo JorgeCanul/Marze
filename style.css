@@ -65,6 +65,26 @@ h2 {
     flex-grow: unset !important;
 }
 
+.nav-border {
+    border-bottom: 4px solid var(--main-color) !important;
+}
+
+nav {
+    /* background-color: var(--main); */
+    z-index: 2;
+    position: -webkit-sticky;
+    position: sticky !important;
+    top: 0.1px;
+    border-bottom: 2px solid transparent;
+}
+
+.sticky {
+    color: slateblue !important;
+  top: 0;
+  z-index: 110;
+}
+
+
 /* ////////// header section ////////// */
 .header {
     /* background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./images/header.jpg'); */

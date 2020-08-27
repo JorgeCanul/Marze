@@ -9,9 +9,9 @@ $(function() {
             $('nav').removeClass('nav-border');
         }
         if(scrolled > scroll) {
-            $('.navigation').removeClass('sticky');
-        } else {
             $('.navigation').addClass('sticky');
+        } else {
+            $('.navigation').removeClass('sticky');
         }
         scroll = $(document).scrollTop();
     })
@@ -52,40 +52,3 @@ image.forEach(img => {
 //   currentYear.innerHTML = date;
 
 
-//   gsap.from('.logo', {duration: 2.5, opacity: 0, scale:0.1, ease: 'back'})
-
-//   gsap.registerPlugin(ScrollTrigger);
-
-gsap.to(".social-items li ion-icon", {
-    duration: 1, 
-    backgroundColor: "black", 
-    padding: "10px",
-    color: "white",
-    borderRadius: "50%",
-   
-     scale:1, // make it bigger or smaller
-    //  translate: -100,
-     y:10,
-    //  x:0,
-    //  duration: 1008,
-     opacity:10,
-    scrollTrigger: {
-      trigger: ".social-items li ion-icon",
-      start: "95px bottom",
-      end: "bottom",
-      scrub: true,
-      markers: false, /// will show markers on the UI, good for debbug
-      id: "scrub",
-      ease: "power2"
-      
-      
-    //   scale: 1,opacity:-10,y:250,
-    //   opacity: 0, scale:0.1, ease: 'back'
-    }
-    
-//   ease: "none"
-    
-    
-  });
-
-//   gsap.from(".social-items li", 1, {scale: 0,opacity:0,y:100})
