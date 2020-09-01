@@ -12,12 +12,15 @@ html {
     --secong-color: #ea7659;
     --main-tran: all 0.5s;
     --main-padding: 6.25rem;
+    --box-sha: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
+    --letter-spa: 0.08929em;
 }
 
 h1, h2 {
     font-weight: bold;
     word-spacing: 4px;
     letter-spacing: 1px;
+    letter-spacing: var(--letter-spa);
 }
 
 h2 {
@@ -31,14 +34,15 @@ h2 {
     padding-left: 1.25rem;
     color: var(--main-color) !important;
     margin-right: 3.125rem;
-    border-bottom: 3px solid transparent !important;
+    border-bottom: 0.1875rem solid transparent !important;
+    letter-spacing: var(--letter-spa);
     transition: var(--main-tran);
    
 }
 
 .navbar-nav .nav-link:hover {
     color: var(--secong-color) !important;
-    border-bottom: 3px solid var(--secong-color) !important;
+    border-bottom: 0.1875rem solid var(--secong-color) !important;
 }
 
 
@@ -46,7 +50,7 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
+    padding: 1.25rem;
 }
 .logo > img {
     height: 55px;
@@ -110,7 +114,68 @@ nav {
     color: violet;
 }
 
+a.btn-action {
+    font-size: 20px;
+    text-decoration: none;
+    color: whitesmoke;
+    padding: 5px 20px 5px 20px;
+
+}
+
+
+.btn-action {
+    position: absolute;
+    left: 8.5%;
+    bottom: 26%;
+    background-color: var(--main-color);
+    padding: 10px;
+    border-radius: 4px;
+    letter-spacing: 0.08929em;
+    border: 1px solid var(--main-color);
+    transition: var(--main-tran);
+    box-shadow: var(--box-shadow) !important;
+}
+
+.btn-action:hover {
+    background-color: transparent;
+    color: var(--main-color);
+}
+
 /* /////////////////////// @media ///////////////////// */
+
+/* ----------- Galaxy S4, S5 and Note 3 ----------- */
+/* Portrait */
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-device-width: 568px) and (min-device-width: 320px) {
+    .navbar-nav{
+        left: 5% !important;
+        margin-top: 10% !important;
+        position: relative !important;
+    }
+    .jorge-link p {
+        font-size: 8px !important;
+    }
+    
+
+}
+
+/* Landscape */
+@media screen 
+  and (device-width: 640px) 
+  and (device-height: 360px) 
+  and (-webkit-device-pixel-ratio: 3) 
+  and (orientation: landscape) {
+    .btn-action { 
+        bottom: 10% !important;
+    }
+    .navbar-nav{
+        left: 2% !important;
+        margin-top: 10% !important;
+        position: relative !important;
+        border-bottom: none !important;
+    }
+    
+
+}
 /* ----------- iPhone 4 and 4S ----------- */
 
 /* Portrait and Landscape */
@@ -153,7 +218,6 @@ nav {
     }
 
     .productos h2 {
-        color: rebeccapurple !important;
         font-size: 20px !important;
         margin: 0 auto !important;
         align-items: center;
@@ -166,9 +230,8 @@ nav {
     }
     .comiensos h2 {
         position: relative;
-        color: black !important;
         font-size: 1.25rem !important;
-        left: -30% !important;
+        left: -18% !important;
     }
     .productos h2::after {
         display: block;
@@ -193,8 +256,22 @@ nav {
         font-size: 70px !important;
         color: #fff !important;
         position: absolute;
-        top: 28%;   
+        top: 17% !important;   
         left: 4% !important;
+    }
+    .header h2 {
+        top: 45% !important; 
+    }
+    .btn-action {
+        bottom: 30% !important;
+    }
+
+    .footer-contact a {
+        padding-left: 20px !important;
+    }
+
+    .jorge-link p {
+        font-size: 7px !important;
     }
    
 }
@@ -211,6 +288,9 @@ nav {
         font-size: 1.25rem !important;
         left: 1% !important;
     }
+    .btn-action {
+        bottom: 7% !important;
+    }
 }
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
 /* Portrait */
@@ -219,39 +299,44 @@ nav {
   and (max-device-width: 667px) 
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) { 
-    .header h1 {
-        font-size: 4.375rem !important;
-        color: #fff !important;
-        position: absolute;
-        top: 28%;   
-        left: 4% !important;
-    }
-    .header h2 {
-        font-size: 60px;
-        color: #fff;
-        word-spacing: 4px;
-        letter-spacing: 1px;
-        position: absolute;
-        top: 55%;
-        left: 8%;
-    }
 
     .productos h2 {
-        color: rebeccapurple !important;
+        color: var(--main-color) !important;
         font-size: 1.25rem !important;
         margin: 0 auto !important;
         align-items: center;
         justify-content: center !important;
         font-size: 1.25rem !important;
-    }
+    } 
     .nonWrap {
         white-space: nowrap !important;
     }
     .comiensos h2 {
         position: relative;
-        color: black !important;
         font-size: 1.25rem !important;
         left: -3.5% !important;
+    }
+
+    .header h1 {
+        font-size: 70px !important;
+        color: #fff !important;
+        position: absolute;
+        top: 17% !important;   
+        left: 4% !important;
+    }
+    .header h2 {
+        top: 42% !important; 
+    }
+    .btn-action {
+        bottom: 36% !important;
+    }
+
+    .footer-contact a {
+        padding-left: 20px !important;
+    }
+
+    .jorge-link p {
+        font-size: 7px !important;
     }
 }
 
@@ -268,6 +353,91 @@ nav {
         position: absolute;
         top: 28%;   
         left: 4% !important;
+    }
+    .navbar-nav{
+        left: 2% !important;
+        margin-top: 10% !important;
+        position: relative !important;
+    }
+    .jorge-link p {
+        font-size: 8px !important;
+    }
+    .btn-action {
+        bottom: 10% !important;
+    }
+}
+
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+/* Portrait */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+
+    .header h1 {
+        font-size: 80px !important;
+        color: #fff !important;
+        position: absolute;
+        top: 17% !important;   
+        left: 4% !important;
+    }
+    
+
+    .productos h2 {
+        color: var(--main-color) !important;
+        margin: 0 auto !important;
+        align-items: center;
+        justify-content: center !important;
+        font-size: 1.25rem !important;
+    } 
+    .nonWrap {
+        white-space: nowrap !important;
+    }
+    .comiensos h2 {
+        position: relative;
+        font-size: 1.25rem !important;
+        left: -3.5% !important;
+    }
+
+
+    .header h2 {
+        top: 42% !important; 
+    }
+    .btn-action {
+        bottom: 40% !important;
+    }
+
+    .footer-contact a {
+        padding-left: 20px !important;
+    }
+
+    .jorge-link p {
+        font-size: 7px !important;
+    }
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+    .navbar-nav{
+        left: 2% !important;
+        margin-top: 10% !important;
+        position: relative !important;
+    }
+    .header h1 {
+        font-size: 5.8rem !important;
+        color: #fff !important;
+        position: absolute;
+        top: 30% !important;   
+        left: 4% !important;
+    }
+
+    .btn-action {
+        bottom: 12% !important;
     }
 }
 
@@ -347,8 +517,18 @@ p {
   and (max-device-width: 812px) 
   and (-webkit-min-device-pixel-ratio: 3)
   and (orientation: portrait) { 
+    .header h1 {
+        font-size: 80px !important;
+        color: #fff !important;
+        position: absolute;
+        top: 17% !important;   
+        left: 4% !important;
+    }
     .header h2 {
         top: 48%;
+    }
+    .btn-action {
+        bottom: 40% !important;
     }
 
 }
@@ -360,12 +540,27 @@ p {
   and (-webkit-min-device-pixel-ratio: 3)
   and (orientation: landscape) { 
     .header h1 {
-        font-size: 3.875rem !important;
+        font-size: 80px !important;
         color: #fff !important;
         position: absolute;
-        top: 28%;   
-        left: 7% !important;
+        top: 17% !important;   
+        left: 4% !important;
     }
+    .navbar-nav{
+        left: 5% !important;
+        margin-top: 10% !important;
+        position: relative !important;
+    }
+    .header h2 {
+        top: 48%;
+    }
+    .btn-action {
+        bottom: 10% !important;
+    }
+    .productos h2 {
+        font-size: 2rem !important;
+    }
+    
 }
 
 
@@ -542,4 +737,84 @@ p {
     text-decoration: none;
     font-size: 15px;
     color: #fff;
+}
+
+
+/* //////// Footer /////// */
+
+footer {
+    background-color: var(--secong-color);
+    display: grid;
+    place-items: center;
+}
+
+.footer-contact {
+    display: grid;
+    list-style-type: none;
+    margin: 20px 0 0 0;
+    place-items: center;
+}
+
+.footer-contact {
+    list-style-type: none;
+}
+
+.footer-contact li {
+    margin-right: 80px;
+}
+
+.footer-contact a {
+    place-items: center;
+    padding-left: 3.4375rem;
+}
+.footer-contact li a {
+    color: #333;
+    font-size: 0.8125rem;
+    text-decoration: none;
+}
+
+.footer-links {
+    display: flex !important;
+    padding: 20px 0 40px 0;
+    list-style-type: none;
+}
+
+.footer-links li {
+    padding: 20px;
+    text-decoration: none;
+}
+
+.social-icon {
+    font-size: 200%;
+    color: var(--main-color);
+    background-color: whitesmoke;
+    padding: 4px;
+    border-radius: 15%;
+    transition: var(--main-tran);
+    box-shadow: var(--box-shadow);
+}
+
+.social-icon:hover {
+    background-color: var(--main-color);
+    color: whitesmoke;
+}
+
+.jorge-link {
+    display: grid;
+    background-color: #ccc;
+    margin-bottom: 0;
+    place-items: center;
+}
+
+.jorge-link p {
+    font-size: 10px;
+    line-height: 0;
+    letter-spacing: 1;
+    padding: 10px !important;
+    margin-bottom: 0;
+}
+
+.jorge-link a {
+    color: blue;
+    text-decoration: underline;
 }
